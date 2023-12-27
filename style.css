@@ -1,0 +1,227 @@
+:root{
+    --color-bg: radial-gradient(circle farthest-corner at 50.4% 50.5% , rgb(16, 58, 16) 0% , rgba(35,91,51,1) 90%) ;
+     --color-tree-back : linear-gradient(to left ,rgb(2, 45, 10) ,rgba(57,181,51,1) ,rgba(1,59,51,1) );
+     --color-tree-front : linear-gradient(to left ,rgba(57,181,51,1) , rgb(10, 39, 16)  , rgba(57,181,51,1));
+     --color-star-dark :rgb(246, 183, 8);
+     --color-start-light:linear-gradient(109.6deg, rgb(247, 199, 87) 11.2% , rgb(255, 248, 35) 100.2%);
+     --color-base:linear-gradient(109.6deg, rgb(58, 44, 12) 11.2% , rgb(63, 62, 27) 100.2%);
+     --color-smal:linear-gradient(109.6deg, rgb(255, 240, 29) 11.2% , rgb(30, 17, 14) 100.2%);
+
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: var(--color-bg);
+    overflow: hidden;
+    background-size: 200% 200%;
+   /* animation: bg-animation  6s ease infinite;*/
+}
+@keyframes bg-animation{
+    0%,100%{
+        background-position: 0% 50%;
+
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+}
+.contrainer{
+    width: 20rem;
+    position: relative;
+}
+
+/* .star{
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--color-star-dark);
+    clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57% ,79% 91%, 50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+    position: absolute;
+    left:50%;
+    top: 15;;
+    transform: translate(-50%,-50%);
+    z-index:12;
+
+}*/
+
+
+
+
+
+
+
+.tree{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tree>div{
+    height: 3rem;
+    background-image: var(--color-tree-back);
+    clip-path: polygon(0% 40%,100% 0%,100% 60%,0% 100%);
+    position: relative;
+    z-index: 11;
+    margin-top:-1.6rem;
+
+}
+.tree>div:nth-of-type(even){
+    background-image: var(--color-tree-front);
+    clip-path: polygon(0% 0%,100% 40%,100% 100%,0% 60%);
+    margin-top: -1.6rem ;
+    transform: rotate(2deg);
+    position: relative;
+    z-index: 1;
+    margin-left: 1rem;
+
+
+    }
+    
+.tree>div:nth-of-type(1){
+    width:4rem;
+    height: 5rem;
+   clip-path: polygon(60% 0%,100% 50%,100% 50%,0% 100%,0% 60%);
+}
+.tree>div:nth-of-type(2){
+    width:5rem;}
+    
+.tree>div:nth-of-type(3){
+        width:6rem;}    
+.tree>div:nth-of-type(4){
+            width:7rem;}
+.tree>div:nth-of-type(5){
+                width:8rem;}
+
+.tree>div:nth-of-type(6){
+                    width:9rem;}     
+ .tree>div:nth-of-type(7){
+                        width:10rem;}           
+ .tree>div:nth-of-type(8){
+  width:11rem;}
+
+.tree>div:nth-of-type(9){
+   width:12rem;}
+   .tree>div:nth-of-type(10){
+        width:13rem;}
+ .tree>div:nth-of-type(11){
+       width:14rem;}
+ .tree>div:nth-of-type(12){
+          width:15rem;}
+ .tree>div:nth-of-type(13){
+        width:16rem;}
+.tree>div:nth-of-type(14){
+          width:17rem;}
+.tree>div:nth-of-type(15){
+   
+    width:14rem;
+    height: 2rem;
+    margin-left: 4rem;
+    clip-path: polygon(100% 3%, 100% 0,100% 100%,0% 100%);
+
+}
+.base{
+    width: 5rem;
+    height: 2rem;
+    background-image: var(--color-base);
+    clip-path: polygon(0 0, 100% 0,90% 100%,10% 100%);
+    position: relative;
+    left: 4%;
+    bottom:50;
+transform: translateX(-50%);
+}
+
+
+/*.shadow{
+    width: 12rem;
+    height: 2rem;
+    background-color: rgb(47, 46, 46);
+    border-radius: 50%;
+    position: relative;
+    filter: blur(6px);
+    left: 3%%;
+    bottom: 5px;
+    transform: translateX(-50%);
+
+
+}*/
+.small-star{
+    position: absolute;
+    left:var(--left);
+    width: 2rem;
+    height: 2rem;
+    background-image:var(--color-smal);
+    clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57% ,79% 91%, 50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+    animation:falling-star 1.5s var(--delay) linear infinite backwards;
+    z-index:2;
+    top:0;
+
+
+}
+
+.small-star:nth-child(2),.small-star:nth-child(6),.small-star:nth-child(8){
+    width: 1rem;
+    height: 1rem;
+    filter: blur(10px);
+}
+
+@keyframes falling-star{
+    0%{
+        transform: translateY(-10rem);
+
+    }
+    100%{
+        transform: translate(10vw,100vh);
+    }
+}
+.wish{
+    position: absolute;
+    bottom:4rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+.letter{
+    background-image: var(--color-smal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+
+ .wish:nth-of-type(1),
+.wish:nth-of-type(6),
+.wish:nth-of-type(11){
+    animation: updown .8s infinite;
+}
+.wish:nth-of-type(2),
+.wish:nth-of-type(7),
+.wish:nth-of-type(12){
+    animation: updown .8s .2s infinite;
+    
+}
+.wish:nth-of-type(3),
+.wish:nth-of-type(8),
+.wish:nth-of-type(14){
+    animation: updown .8s .5s infinite;
+}
+.wish:nth-of-type(5),
+.wish:nth-of-type(10),
+.wish:nth-of-type(4),
+.wish:nth-of-type(9)
+{
+    animation: updown .8s .1s infinite;
+}
+@keyframes updown{
+    0%,100%{
+        transform: translateY(0);
+
+    }
+    50%{
+        transform: translateY(1rem);
+    }}
